@@ -46,5 +46,70 @@ Before start to deploy Freelancer HQ in your server, make sure you hvae requirem
 
 I used composer to utilize Freelancer HQ, so make sure your local server or live server has  Composer installed.
 
+<h3>Cron Job</h3>
+
+`* * * * * php /path-to-your-project/artisan schedule:run >> /dev/null 2>&1`
 
 
+<h3>Pretty URLs</h3>
+
+For Apache: If my pre added .htaccess dont work, then use this credentials:
+
+`
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+`
+
+For Nginx:
+
+`location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}`
+
+<h3>How to install</h3>
+
+First run:
+
+`
+composer install
+npm install
+`
+
+After then create a new database and add your database credentials to your .env file:
+
+`
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=freelancerhq
+DB_USERNAME=root
+DB_PASSWORD=
+`
+
+Also dont forget to update the App url:
+
+`APP_URL=localhost/freelancerhq`
+
+Once done everything, run this command:
+
+`php artisan freelancerhq:install`
+
+The above comand will run `php artisan key:generate --force` and `php artisan migrate --force`
+
+
+Default Admin Login xredentials:
+
+`
+Email: admin@freelancerhq.dev
+Password: password
+`
+
+Before you deploy make sure you have set proper settings in .env file
+
+`
+APP_ENV=production
+APP_DEBUG=false
+`
