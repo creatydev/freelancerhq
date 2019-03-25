@@ -1,10 +1,10 @@
-#Freelancer HQ
+<h2>Freelancer HQ</h2>
 
-Freelancer HQ is a simple single page CRM software, Built with Laravel and Vue.js for Freelancer and Small Business like me.
+Freelancer HQ is a simple single page CRM software, Built with Laravel 5.6 and Vue.js for Freelancer and Small Business like me.
 
 I am using it as my personal CRM software, so you will get almost every features with high level UIX.
 
-Some features of Freelancer HQ:
+<h3>Some features of Freelancer HQ:</h3>
 
 * Build and send Proposal using HTML and CSS template.
 * Dynamic and Advance Dasheboard
@@ -27,7 +27,7 @@ Some features of Freelancer HQ:
 * Easy Translation system
 * Off course, Developer Friendly
 
-##REQUIREMENTS
+<h3>REQUIREMENTS</h3>
 
 Before start to deploy Freelancer HQ in your server, make sure you hvae requirements like bellow:
 
